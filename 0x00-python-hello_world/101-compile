@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "Please provide a python file as an argument."
+	exit 1
+fi
+
+if [ ! -f "$1" ]; then
+	echo "$1 does not exist."
+	exit 1
+fi 
+
+PYFILE=$(python -m py_compile "$1" 2>&1 >/dve/null | grep -o '^\w\+\.pyc')
+
+if [ $? -ne 0 ]; then
+	echo "An error occurred while compiling the python script."
+	exit 1
+fi 
+
+export PYFILE="$PYFILE"
+
+echo "The compiled pyhthon script file $1 is stored in the environment variable \$PYFILE
