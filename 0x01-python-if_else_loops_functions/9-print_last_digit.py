@@ -8,3 +8,4 @@ def print_last_digit(number):
         print(last_digit)
     else:
         print(last_digit)
+    return last_digit
