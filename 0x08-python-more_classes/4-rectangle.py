@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 """Defines a class of name Rectangle"""
+
 
 class Rectangle:
     """Initializes the class Rectangle"""
@@ -50,13 +50,15 @@ class Rectangle:
             return 0
         else:
             return ((self.width * 2) + (self.height * 2))
+
     def __str__(self):
         """Returns printable string representation of the rectangle"""
         if self.__width != 0 and self.__height != 0:
             return "\n".join(f"{'#' * self.__width}"
-                            for j in range(self.__height))
+                             for j in range(self.__height))
         else:
             return ""
+
     def __repr__(self):
         """Returns a string representation of the rectangle for recreation"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
