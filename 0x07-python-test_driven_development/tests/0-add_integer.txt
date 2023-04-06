@@ -1,0 +1,61 @@
+# 0-add_integer.txt
+
+=============================
+ How to use 0-add_integer.py
+=============================
+
+This module has just one function ``add_integer(a, b=98)``
+this function adds two integers.
+
+Using ``add_integer``
+---------------------
+
+Import add_integer from 0-add_integer:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+testing:
+	>>> add_integer(1, 2)
+	3
+
+testing:
+	>>> add_integer(100, -2)
+	98
+
+testing:
+	>>> add_integer(2)
+	100
+
+testing:
+	>>> add_integer(100.3, -2)
+	98
+
+testing:
+	>>> add_integer(67)
+	165
+
+testing:
+	>>> add_integer(-3)
+	95
+
+testing:
+	>>> add_integer(8.9, 9.7)
+	17
+
+testing:
+	>>> add_integer("h", "t")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+testing:
+	>>> add_integer("h")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+testing:
+	>>> add_integer(100000000, 100000000)
+	200000000
+
+testing:
+	>>> add_integer(8, "r")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
