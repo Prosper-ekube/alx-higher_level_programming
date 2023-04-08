@@ -1,19 +1,49 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Handle basic arithmetic operations."""
-    from calculator_1 import add, sub, mul, div
+
+    import calculator_1
+
     import sys
 
-    if len(sys.argv) - 1 != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+    args = sys.argv[1:]
 
-    ops = {"+": add, "-": sub, "*": mul, "/": div}
-    if sys.argv[2] not in list(ops.keys()):
+    num_args = len(args)
+
+    plus = "+"
+    minus = "-"
+    times = "*"
+    divide = "/"
+
+    operators = [plus, minus, times, divide]
+
+    Add = calculator_1.add
+    Sub = calculator_1.sub
+    Mul = calculator_1.mul
+    Div = calculator_1.div
+
+    if num_args != 3:
+        print("usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+    elif args[1] not in args:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
+    elif args[1] not in operators:
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+    else:
+        x = int(args[0])
+        y = int(args[2])
 
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
+        if plus in args:
+            print("{} + {} = {}".format(x, y, Add(x, y)))
+            sys.exit(0)
+        if minus in args:
+            print("{} - {} = {}".format(x, y, Sub(x, y)))
+            sys.exit(0)
+        if times in args:
+            print("{} * {} = {}".format(x, y, Mul(x, y)))
+            sys.exit(0)
+        if divide in args:
+            print("{} / {} = {}".format(x, y, Div(x, y)))
+            sys.exit(0)
