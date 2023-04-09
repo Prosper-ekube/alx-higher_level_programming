@@ -32,8 +32,8 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     else:
-        x = int(args[1])
-        y = int(args[3])
+        x = int(args[0])
+        y = int(args[2])
 
         if plus in args:
             print("{} + {} = {}".format(x, y, Add(x, y)))
