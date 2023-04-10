@@ -23,7 +23,7 @@ if __name__ == "__main__":
     Div = calculator_1.div
 
     if num_args != 3:
-        print("usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     elif args[1] not in args:
         print("Unknown operator. Available operators: +, -, * and /")
