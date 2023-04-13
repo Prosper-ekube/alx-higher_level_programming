@@ -42,6 +42,26 @@ testing:
 	17
 
 testing:
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+testing:
+	>>> add_integer(223, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+testing:
+	>>> add_integer(234, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+testing:
+	>>> add_integer(float('nan'), 2232)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+testing:
 	>>> add_integer("h", "t")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
